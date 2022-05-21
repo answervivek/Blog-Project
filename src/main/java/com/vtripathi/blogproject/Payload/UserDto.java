@@ -1,11 +1,15 @@
 package com.vtripathi.blogproject.Payload;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.vtripathi.blogproject.Entity.Role;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.validation.constraints.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -28,5 +32,7 @@ public class UserDto {
 
     @NotEmpty
     private String about;
+
+    private Set<RoleDto> roles = new HashSet<>();
 
 }
